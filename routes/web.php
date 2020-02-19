@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/books', function () {
     return view('welcome');
-});
+})->name('get-books');
 
-Route::post('/books', 'BooksController@store');
-Route::patch('/books/{book}', 'BooksController@update');
+
+Route::get('/books/{book}', 'BooksController@getBook')->name('get-book');
+Route::post('/books', 'BooksController@store')->name('add-book');
+Route::patch('/books/{book}', 'BooksController@update')->name('update-book');
+Route::delete('/books/{book}', 'BooksController@destroy')->name('delete-book');
+
+Route::post('/authors', 'AuthorsController@store')->name('add-author');
+
+
