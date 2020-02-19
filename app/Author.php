@@ -12,7 +12,9 @@ class Author extends Model
     protected $dates = ['dob'];
 
     public function setDobAttribute($dob) {
-        $this->attributes['dob'] = Carbon::parse($dob); 
+        $this->attributes['dob'] = Carbon::parse($dob);
     }
+
+   
 
 }
