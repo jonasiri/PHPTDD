@@ -8,9 +8,14 @@ use Illuminate\Http\Request;
 class AuthorsController extends Controller
 {
     public function store() {
+        Author::create($this->validateRequest());
+    }
 
-        Author::create(request()->only([
-            'name', 'dob',
-        ]));
+    protected function validateRequest() {
+
+        return  $request = request()->validate( [
+            'name'=> 'required',
+            'dob'=> 'required'
+        ]);
     }
 }

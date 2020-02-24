@@ -73,7 +73,7 @@ class BookCheckoutTest extends TestCase
 
     }
     /** @test */
-    public function only_sign_in_users_can_checkin_book() {
+    public function only_signed_in_users_can_check_in_book() {
 
         $book = factory(Book::class)->create();
 
