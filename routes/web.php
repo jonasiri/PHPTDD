@@ -21,6 +21,7 @@ Route::post('/books', 'BooksController@store')->name('add-book');
 Route::patch('/books/{book}', 'BooksController@update')->name('update-book');
 Route::delete('/books/{book}', 'BooksController@destroy')->name('delete-book');
 
+Route::get('/authors/create', 'AuthorsController@create')->name('create-author');
 Route::post('/authors', 'AuthorsController@store')->name('add-author');
 
 
